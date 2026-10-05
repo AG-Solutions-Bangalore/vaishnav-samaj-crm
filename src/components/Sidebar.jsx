@@ -1,6 +1,7 @@
 import {
   ArrowRightOutlined,
   CarOutlined,
+  ClockCircleOutlined,
   CloseOutlined,
   HomeOutlined,
   IdcardOutlined,
@@ -67,6 +68,16 @@ const getMenuItems = (collapsed, userTypeRaw) => {
     uType === 3
       ? [{ key: "/mid-issued", icon: <IdcardOutlined />, label: "MID Issued" }]
       : [];
+  const pendingUser =
+    uType === 3
+      ? [
+          {
+            key: "/pending-users",
+            icon: <ClockCircleOutlined />,
+            label: "Pending Users",
+          },
+        ]
+      : [];
 
   if (collapsed) {
     return [
@@ -79,6 +90,7 @@ const getMenuItems = (collapsed, userTypeRaw) => {
       //   children: managementChildren,
       // },
       ...midIssued,
+      ...pendingUser,
     ];
   }
 
@@ -99,8 +111,12 @@ const getMenuItems = (collapsed, userTypeRaw) => {
         ...memberItems,
       ],
     },
-    midIssued.length > 0
-      ? { type: "group", label: "MID", children: midIssued }
+    midIssued.length > 0 || pendingUser.length > 0
+      ? {
+          type: "group",
+          label: "MID",
+          children: [...midIssued, ...pendingUser],
+        }
       : null,
   ].filter(Boolean);
 };
