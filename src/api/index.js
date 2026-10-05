@@ -22,6 +22,8 @@ export const PANEL_UPDATE_OLD_USERS_STATUS = `/panel-update-old-users-status`;
 export const NEW_USERS = `/panel-fetch-new-users-list`;
 //SHIFTED_DIED_USERS
 export const SHIFTED_DIED_USERS = `/panel-fetch-old-users-dead-shifted-list`;
+//PENDING_OLD_USERS
+export const PENDING_OLD_USERS = `/panel-fetch-pending-old-users-list`;
 //UPDATE_PROFILE
 export const UPDATE_PROFILE = `/panel-update-profile`;
 //PANEL_LOGIN

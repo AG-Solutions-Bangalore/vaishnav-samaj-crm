@@ -26,6 +26,7 @@ import RegisteredNotScanned from "./pages/report/registerednotscanned/Registered
 import OldUsers from "./pages/oldusers/OldUsers";
 import NotFoundPage from "./components/common/not-found";
 import MIDIssued from "./pages/midissued/MIDIssued";
+import PendingUsers from "./pages/pendingusers/PendingUsers";
 import NewUsers from "./pages/newusers/NewUsers";
 import ShiftedDiedUsers from "./pages/shifteddiedusers/ShiftedDiedUsers";
 
@@ -87,6 +88,8 @@ function App() {
                   element={<NotRegisterNotScanned />}
                 />
                 <Route path="/mid-issued" element={<MIDIssued />} />
+                <Route path="/pending-users" element={<PendingUsers />} />
+                <Route path="/pending-old-users" element={<PendingUsers />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </ProtectedLayout>
