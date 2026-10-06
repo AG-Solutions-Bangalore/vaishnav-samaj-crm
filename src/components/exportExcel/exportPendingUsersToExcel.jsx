@@ -10,7 +10,7 @@ export const exportPendingUsersToExcel = async (
 
   // Define columns
   const columns = [
-    { header: "S.No", key: "sno", width: 10 },
+    { header: "UID", key: "uid", width: 15 },
     { header: "Full Name", key: "full_name", width: 30 },
     { header: "Address", key: "address", width: 45 },
     { header: "Mobile", key: "mobile", width: 30 },
@@ -52,7 +52,7 @@ export const exportPendingUsersToExcel = async (
   // ----- DATA ROWS -----
   data.forEach((item, i) => {
     const row = worksheet.getRow(i + 3);
-    row.getCell(1).value = i + 1;
+    row.getCell(1).value = item.uid ?? "";
     row.getCell(2).value = item.full_name || "";
     row.getCell(3).value = item.address || item.related_address || "";
     row.getCell(4).value = item.mobile || item.related_mobile || "";
